@@ -8,12 +8,12 @@ warnings.filterwarnings('ignore')
 
 # Load the scaler
 #scale_name = 'C:/Users/Daniel/Desktop/Credit_Card_Fraud_Detection/Model/scaler.sav'
-scale_name = 'Model/scaler.sav'
+scale_name = '/Model/scaler.sav'
 scale = pickle.load(open(scale_name, 'rb'))
 
 # Load the saved classification model
 #filename = 'C:/Users/Daniel/Desktop/Credit_Card_Fraud_Detection/Model/prediction_model.sav'
-filename = 'Model/prediction_model.sav'
+filename = '/Model/prediction_model.sav'
 load_clf = pickle.load(open(filename, 'rb'))
 
 

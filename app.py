@@ -65,7 +65,8 @@ prediction_proba = load_clf.predict_proba(input_df_scale)[:, 1]
 
 # Display results
 st.subheader('Prediction')
-st.write(':red[Card at risk fraud!!]' if prediction == 1 else ':green[Card not at risk]')
+# st.write(':red[Card at risk fraud!!]' if prediction == 1 else ':green[Card not at risk]')
+st.markdown(':red:`Card at risk fraud!!`' if prediction == 1 else ':green:`Card not at risk`')
 
 st.subheader('Prediction Probability')
 

@@ -7,13 +7,13 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Load the scaler
-# scale_name = 'C:/Users/Daniel/Desktop/Credit_Card_Fraud_Detection/scaler.sav'
-scale_name = 'scaler.sav'
+scale_name = 'C:/Users/Daniel/Desktop/Credit_Card_Fraud_Detection/scaler.sav'
+#scale_name = 'scaler.sav'
 scale = pickle.load(open(scale_name, 'rb'))
 
 # Load the saved classification model
-# filename = 'C:/Users/Daniel/Desktop/Credit_Card_Fraud_Detection/prediction_model.sav'
-filename = 'prediction_model.sav'
+filename = 'C:/Users/Daniel/Desktop/Credit_Card_Fraud_Detection/prediction_model.sav'
+#filename = 'prediction_model.sav'
 load_clf = pickle.load(open(filename, 'rb'))
 
 
@@ -65,8 +65,7 @@ prediction_proba = load_clf.predict_proba(input_df_scale)[:, 1]
 
 # Display results
 st.subheader('Prediction')
-# st.write(':red[Card at risk fraud!!]' if prediction == 1 else ':green[Card not at risk]')
-st.markdown(':red:`Card at risk fraud!!`' if prediction == 1 else ':green:`Card not at risk`')
+st.write(':red[Card at risk fraud!!]' if prediction == 1 else ':green[Card not at risk]')
 
 st.subheader('Prediction Probability')
 

@@ -9,12 +9,12 @@ warnings.filterwarnings('ignore')
 # Load the scaler
 # scale_name = 'C:/Users/Daniel/Desktop/Credit_Card_Fraud_Detection/scaler.sav'
 scale_name = 'scaler.sav'
-scale = pickle.load(open(scale_name, 'rb'))
+scaler = pickle.load(open(scale_name, 'rb'))
 
 # Load the saved classification model
 # filename = 'C:/Users/Daniel/Desktop/Credit_Card_Fraud_Detection/prediction_model.sav'
 filename = 'prediction_model.sav'
-load_clf = pickle.load(open(filename, 'rb'))
+model = pickle.load(open(filename, 'rb'))
 
 
 # Function to collect user input features into a DataFrame
@@ -59,9 +59,9 @@ st.write('### User Input Features')
 st.write(input_df)
 
 # Make predictions
-input_df_scale = scale.transform(input_df)
-prediction = load_clf.predict(input_df_scale)
-prediction_proba = load_clf.predict_proba(input_df_scale)[:, 1]
+input_df_scale = scaler.transform(input_df)
+prediction = model.predict(input_df_scale)
+prediction_proba = model.predict_proba(input_df_scale)[:, 1]
 
 # Display results
 st.subheader('Prediction')
